@@ -19,10 +19,5 @@ public class CorsFilter implements ContainerResponseFilter {
         responseContext.getHeaders().add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD");
         responseContext.getHeaders().add("Access-Control-Max-Age", "1209600");
     }
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**") // Liberar CORS para todos os endpoints
-                .allowedOrigins("*") // Permitir todas as origens
-                .allowedMethods("GET", "POST", "PUT", "DELETE") // Permitir todos os métodos
-                .allowedHeaders("*"); // Permitir todos os cabeçalhos
-    }
+    
 }

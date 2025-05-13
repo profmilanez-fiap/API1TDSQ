@@ -13,11 +13,10 @@ public class CorsFilter implements ContainerResponseFilter {
     public void filter(ContainerRequestContext requestContext, ContainerResponseContext responseContext)
             throws IOException {
 
-        // Use "*" para permitir qualquer origem ou especifique sua URL:
         responseContext.getHeaders().add("Access-Control-Allow-Origin", "https://front1-tdsq-2xje.vercel.app");
-        responseContext.getHeaders().add("Access-Control-Allow-Headers", "origin, content-type, accept, authorization");
         responseContext.getHeaders().add("Access-Control-Allow-Credentials", "true");
+        responseContext.getHeaders().add("Access-Control-Allow-Headers", "Origin, Content-Type, Accept, Authorization");
         responseContext.getHeaders().add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD");
-        responseContext.getHeaders().add("Access-Control-Max-Age", "1209600");
+        responseContext.getHeaders().add("Access-Control-Max-Age", "86400");
     }
 }
